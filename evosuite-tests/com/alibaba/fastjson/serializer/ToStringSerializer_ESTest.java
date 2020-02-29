@@ -21,6 +21,16 @@ import org.junit.runner.RunWith;
 @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true, separateClassLoader = true, useJEE = true) 
 public class ToStringSerializer_ESTest extends ToStringSerializer_ESTest_scaffolding {
 
+  /**
+   * COMPREENSÍVEL: Sim
+   * DE FÁCIL CRIAÇÃO: Sim
+   * IMPORTANTE PARA O CONTEXTO: Sim
+   * ----------------------------------------------------------
+   * DESCRIÇÃO: O teste em questão verifica se ao passar null 
+   * como parametro JSONSerializer, o método write gera a exceção
+   * experada (NullPointerException)
+   * ----------------------------------------------------------
+  */
   @Test(timeout = 4000)
   public void test0()  throws Throwable  {
       ToStringSerializer toStringSerializer0 = ToStringSerializer.instance;
@@ -38,6 +48,17 @@ public class ToStringSerializer_ESTest extends ToStringSerializer_ESTest_scaffol
       }
   }
 
+  /**
+   * COMPREENSÍVEL: Não
+   * DE FÁCIL CRIAÇÃO: Não
+   * IMPORTANTE PARA O CONTEXTO: Não foi possível definir
+   * ----------------------------------------------------------
+   * DESCRIÇÃO: Devido a toda a estrutura necessária para preparar
+   * o teste, não foi possível compreender o que de fato
+   * o teste deve fazer. Dessa forma, não foi possível determinar 
+   * se o teste é importante para o contexto.
+   * ----------------------------------------------------------
+  */
   @Test(timeout = 4000)
   public void test1()  throws Throwable  {
       ToStringSerializer toStringSerializer0 = new ToStringSerializer();
@@ -49,15 +70,5 @@ public class ToStringSerializer_ESTest extends ToStringSerializer_ESTest_scaffol
       FieldInfo fieldInfo0 = new FieldInfo("90$wHCvaC^WA4", class1, class2, (Type) null, (Field) null, 95, 1537, 169);
       toStringSerializer0.write(jSONSerializer0, (Object) null, fieldInfo0, class0, 95);
       assertFalse(fieldInfo0.unwrapped);
-  }
-
-  @Test(timeout = 4000)
-  public void test2()  throws Throwable  {
-      ToStringSerializer toStringSerializer0 = new ToStringSerializer();
-      SerializeConfig serializeConfig0 = new SerializeConfig(false);
-      JSONSerializer jSONSerializer0 = new JSONSerializer(serializeConfig0);
-      Object object0 = new Object();
-      toStringSerializer0.write(jSONSerializer0, serializeConfig0, object0, (Type) null, 1537);
-      assertEquals("@type", serializeConfig0.getTypeKey());
   }
 }
